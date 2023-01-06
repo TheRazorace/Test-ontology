@@ -1,0 +1,422 @@
+@prefix : <http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/test-ml#> .
+@prefix ov: <http://open.vocab.org/terms/> .
+@prefix qb: <﻿http://purl.org/linked-data/cube#> .
+@prefix mls: <http://www.w3.org/ns/mls#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix terms: <http://purl.org/dc/terms/> .
+@prefix dcterms: <http://purl.org/dc/elements/1.1/> .
+@prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#> .
+@prefix edamontology: <http://edamontology.org/> .
+@base <http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-onto> .
+
+<http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-onto> rdf:type owl:Ontology ;
+                                                                        owl:imports <http://www.w3.org/2016/03/mls#> .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://open.vocab.org/terms/hasMD5
+ov:hasMD5 rdf:type owl:AnnotationProperty ;
+          rdfs:label "has MD5 checksum" ;
+          rdfs:range rdfs:Literal ;
+          rdfs:domain mls:Dataset .
+
+
+###  http://purl.org/dc/terms/accessRights
+terms:accessRights rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/author
+terms:author rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/available
+terms:available rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/bibliographicCitation
+terms:bibliographicCitation rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/contributor
+terms:contributor rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/creator
+terms:creator rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/dateSubmitted
+terms:dateSubmitted rdf:type owl:AnnotationProperty ;
+                    rdfs:range xsd:date ;
+                    rdfs:domain mls:Dataset .
+
+
+###  http://purl.org/dc/terms/isReferencedBy
+terms:isReferencedBy rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/language
+terms:language rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/license
+terms:license rdf:type owl:AnnotationProperty ;
+              rdfs:range rdfs:Literal ;
+              rdfs:domain mls:Dataset .
+
+
+###  http://purl.org/dc/terms/relation
+terms:relation rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/source
+terms:source rdf:type owl:AnnotationProperty ;
+             rdfs:range rdfs:Literal ;
+             rdfs:domain mls:Dataset .
+
+
+###  http://purl.org/dc/terms/title
+terms:title rdfs:range xsd:string ;
+            rdfs:domain mls:Dataset .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/test-ml#hasPredictionsURL
+:hasPredictionsURL rdf:type owl:AnnotationProperty ;
+                   rdfs:label "has predictions URL" ;
+                   rdfs:range rdfs:Literal ;
+                   rdfs:domain mls:Run .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/test-ml#has_data_split_url
+:has_data_split_url rdf:type owl:AnnotationProperty ;
+                    rdfs:label "has data split url" ;
+                    rdfs:range rdfs:Literal ;
+                    rdfs:domain mls:Task .
+
+
+###  http://www.w3.org/2002/07/owl#sameAs
+owl:sameAs rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://edamontology.org/has_format
+edamontology:has_format rdf:type owl:ObjectProperty ;
+                        owl:inverseOf edamontology:is_format_of ;
+                        rdf:type owl:FunctionalProperty ;
+                        rdfs:domain mls:Dataset ;
+                        rdfs:range edamontology:format_1950 ;
+                        rdfs:label "has format" .
+
+
+###  http://edamontology.org/is_format_of
+edamontology:is_format_of rdf:type owl:ObjectProperty ;
+                          rdfs:domain edamontology:format_1950 ;
+                          rdfs:range mls:Dataset ;
+                          rdfs:label "is format of" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/test-ml#hasDatasetCharacteristicType
+:hasDatasetCharacteristicType rdf:type owl:ObjectProperty ;
+                              rdfs:domain mls:DatasetCharacteristic ;
+                              rdfs:range skos:Concept ;
+                              rdfs:label "has dataset characteristic type" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/test-ml#hasDefaultTargetFeature
+:hasDefaultTargetFeature rdf:type owl:ObjectProperty ;
+                         rdfs:domain mls:Dataset ;
+                         rdfs:range mls:Feature ;
+                         rdfs:label "has default target feature" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/test-ml#hasFeatureCharacteristicType
+:hasFeatureCharacteristicType rdf:type owl:ObjectProperty ;
+                              rdfs:domain mls:FeatureCharacteristic ;
+                              rdfs:range skos:Concept ;
+                              rdfs:label "has feature characteristic type" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/test-ml#hasIdFeature
+:hasIdFeature rdf:type owl:ObjectProperty ;
+              rdfs:domain mls:Dataset ;
+              rdfs:range mls:Feature ;
+              rdfs:label "has id feature" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/test-ml#ignoresFeature
+:ignoresFeature rdf:type owl:ObjectProperty ;
+                rdfs:domain mls:Dataset ;
+                rdfs:range mls:Feature ;
+                rdfs:label "ignores feature" .
+
+
+###  http://www.w3.org/ns/mls#achieves
+mls:achieves rdfs:domain mls:Run ;
+             rdfs:range mls:Task .
+
+
+###  http://www.w3.org/ns/mls#definedOn
+mls:definedOn rdf:type owl:ObjectProperty ;
+              owl:inverseOf mls:defines ;
+              rdfs:domain mls:Task ;
+              rdfs:range mls:EvaluationSpecification .
+
+
+###  http://www.w3.org/ns/mls#defines
+
+###  http://www.w3.org/ns/mls#executes
+mls:executes rdf:type owl:ObjectProperty .
+
+
+###  http://www.w3.org/ns/mls#hasHyperParameter
+mls:hasHyperParameter rdfs:domain mls:Implementation ;
+                      rdfs:range mls:HyperParameter .
+
+
+###  http://www.w3.org/ns/mls#hasInput
+mls:hasInput rdfs:domain mls:Run ;
+             rdfs:range mls:Data ,
+                        mls:HyperParameterSetting .
+
+
+###  http://www.w3.org/ns/mls#hasOutput
+mls:hasOutput rdfs:domain mls:Run ;
+              rdfs:range [ rdf:type owl:Class ;
+                           owl:unionOf ( mls:Model
+                                         mls:ModelEvaluation
+                                       )
+                         ] .
+
+
+###  http://www.w3.org/ns/mls#hasPart
+mls:hasPart rdfs:domain mls:Dataset ,
+                        mls:EvaluationSpecification ,
+                        mls:Experiment ,
+                        mls:Run ,
+                        mls:Software ;
+            rdfs:range mls:EvaluationProcedure ,
+                       mls:Experiment ,
+                       mls:Feature ,
+                       mls:Implementation ,
+                       mls:Study .
+
+
+###  http://www.w3.org/ns/mls#hasQuality
+mls:hasQuality owl:inverseOf qb:dataSet ;
+               rdfs:domain mls:Dataset ,
+                           mls:Feature ;
+               rdfs:range mls:DatasetCharacteristic ,
+                          mls:FeatureCharacteristic .
+
+
+###  http://www.w3.org/ns/mls#implements
+mls:implements rdfs:domain mls:Implementation ;
+               rdfs:range mls:Algorithm .
+
+
+###  http://www.w3.org/ns/mls#realizes
+mls:realizes rdfs:domain mls:Run ;
+             rdfs:range mls:Algorithm .
+
+
+###  http://www.w3.org/ns/mls#specifiedBy
+mls:specifiedBy rdfs:domain mls:HyperParameterSetting ,
+                            mls:ModelEvaluation ;
+                rdfs:range mls:EvaluationMeasure ,
+                           mls:HyperParameter .
+
+
+###  http://www.w3.org/ns/prov#atLocation
+prov:atLocation rdf:type owl:ObjectProperty ;
+                rdfs:label "atLocation" .
+
+
+###  ﻿http://purl.org/linked-data/cube#dataSet
+qb:dataSet rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/test-ml#hasCacheFormat
+:hasCacheFormat rdf:type owl:DatatypeProperty ;
+                rdfs:domain mls:Dataset ;
+                rdfs:range rdfs:Literal ;
+                rdfs:label "has cache format" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/test-ml#hasFoldNumber
+:hasFoldNumber rdf:type owl:DatatypeProperty ;
+               rdfs:domain mls:EvaluationMeasure ;
+               rdfs:range xsd:integer ;
+               rdfs:label "has fold number" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/test-ml#hasNumberOfDownloads
+:hasNumberOfDownloads rdf:type owl:DatatypeProperty ;
+                      rdfs:domain mls:Dataset ;
+                      rdfs:range xsd:integer ;
+                      rdfs:label "has number of downloads" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/test-ml#hasNumberOfDownvotes
+:hasNumberOfDownvotes rdf:type owl:DatatypeProperty ;
+                      rdfs:domain mls:Run ;
+                      rdfs:range xsd:integer ;
+                      rdfs:label "has number of downvotes" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/test-ml#hasNumberOfIssues
+:hasNumberOfIssues rdf:type owl:DatatypeProperty ;
+                   rdfs:domain mls:Dataset ;
+                   rdfs:range xsd:integer ;
+                   rdfs:label "has number of issues" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/test-ml#hasNumberOfLikes
+:hasNumberOfLikes rdf:type owl:DatatypeProperty ;
+                  rdfs:domain mls:Dataset ;
+                  rdfs:range xsd:integer ;
+                  rdfs:label "has number of likes" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/test-ml#hasPlatformID
+:hasPlatformID rdf:type owl:DatatypeProperty ;
+               rdfs:domain mls:Data ,
+                           mls:Dataset ,
+                           mls:Run ,
+                           mls:Task ;
+               rdfs:range xsd:integer .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/test-ml#hasSplitDimensions
+:hasSplitDimensions rdf:type owl:DatatypeProperty ;
+                    rdfs:domain mls:Task ;
+                    rdfs:range rdfs:Literal ;
+                    rdfs:label "has split dimensions" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/test-ml#hasTrainTestSplitIndices
+:hasTrainTestSplitIndices rdf:type owl:DatatypeProperty ;
+                          rdfs:domain mls:Task ;
+                          rdfs:range rdfs:Literal ;
+                          rdfs:label "has train test split indices" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/test-ml#has_repeat_number
+:has_repeat_number rdf:type owl:DatatypeProperty ;
+                   rdfs:domain mls:EvaluationMeasure ;
+                   rdfs:range xsd:integer ;
+                   rdfs:label "has repeat number" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/test-ml#isVerified
+:isVerified rdf:type owl:DatatypeProperty ;
+            rdfs:domain mls:Dataset ,
+                        mls:Run ;
+            rdfs:range xsd:boolean .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://edamontology.org/format_1950
+edamontology:format_1950 rdf:type owl:Class ;
+                         rdfs:subClassOf mls:InformationEntity ;
+                         rdfs:label "Format" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/test-ml#VocabularyTerm
+:VocabularyTerm rdf:type owl:Class ;
+                rdfs:label "SKOS Term" .
+
+
+###  http://www.w3.org/2004/02/skos/core#Collection
+skos:Collection rdf:type owl:Class ;
+                rdfs:subClassOf :VocabularyTerm ;
+                rdfs:label "Collection" .
+
+
+###  http://www.w3.org/2004/02/skos/core#Concept
+skos:Concept rdf:type owl:Class ;
+             rdfs:subClassOf :VocabularyTerm ;
+             rdfs:label "Concept" .
+
+
+###  http://www.w3.org/2004/02/skos/core#ConceptScheme
+skos:ConceptScheme rdf:type owl:Class ;
+                   rdfs:subClassOf :VocabularyTerm ;
+                   rdfs:label "Concept Scheme" .
+
+
+###  http://www.w3.org/ns/mls#Data
+mls:Data rdfs:subClassOf [ rdf:type owl:Restriction ;
+                           owl:onProperty mls:defines ;
+                           owl:someValuesFrom mls:Task
+                         ] .
+
+
+###  http://www.w3.org/ns/mls#Dataset
+mls:Dataset rdfs:subClassOf [ rdf:type owl:Restriction ;
+                              owl:onProperty mls:hasPart ;
+                              owl:someValuesFrom mls:Feature
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty mls:hasQuality ;
+                              owl:someValuesFrom mls:DatasetCharacteristic
+                            ] ;
+            owl:sameAs "﻿http://purl.org/linked-data/cube#DataSet"^^xsd:anyURI .
+
+
+###  http://www.w3.org/ns/mls#DatasetCharacteristic
+mls:DatasetCharacteristic rdfs:label "Dataset Characteristic" .
+
+
+###  http://www.w3.org/ns/mls#Feature
+mls:Feature rdfs:subClassOf [ rdf:type owl:Restriction ;
+                              owl:onProperty mls:hasQuality ;
+                              owl:someValuesFrom mls:FeatureCharacteristic
+                            ] .
+
+
+###  http://www.w3.org/ns/mls#FeatureCharacteristic
+mls:FeatureCharacteristic rdfs:label "Feature Characteristic" .
+
+
+###  http://www.w3.org/ns/prov#Entity
+prov:Entity rdf:type owl:Class ;
+            rdfs:subClassOf mls:InformationEntity ;
+            rdfs:label "Entity" .
+
+
+###  http://www.w3.org/ns/prov#Location
+prov:Location rdf:type owl:Class ;
+              rdfs:subClassOf mls:InformationEntity ;
+              rdfs:label "Location" .
+
+
+###  http://xmlns.com/foaf/0.1/Person
+<http://xmlns.com/foaf/0.1/Person> rdf:type owl:Class ;
+                                   rdfs:label "Person" .
+
+
+###  ﻿http://purl.org/linked-data/cube#Observation
+qb:Observation rdf:type owl:Class ;
+               rdfs:subClassOf mls:Data .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

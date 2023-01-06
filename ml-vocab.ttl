@@ -1,0 +1,2513 @@
+@prefix : <http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#> .
+@prefix ov: <http://open.vocab.org/terms/> .
+@prefix mls: <http://www.w3.org/ns/mls#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix terms: <http://purl.org/dc/terms/> .
+@prefix dcterms: <http://purl.org/dc/elements/1.1/> .
+@prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#> .
+@prefix edamontology: <http://edamontology.org/> .
+@base <http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab> .
+
+<http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab> rdf:type owl:Ontology .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://open.vocab.org/terms/hasMD5
+ov:hasMD5 rdf:type owl:AnnotationProperty ;
+          rdfs:label "has MD5 checksum" ;
+          rdfs:range rdfs:Literal ;
+          rdfs:domain mls:Dataset .
+
+
+###  http://purl.org/dc/terms/accessRights
+terms:accessRights rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/bibliographicCitation
+terms:bibliographicCitation rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/contributor
+terms:contributor rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/dateSubmitted
+terms:dateSubmitted rdf:type owl:AnnotationProperty ;
+                    rdfs:range xsd:date ;
+                    rdfs:domain mls:Dataset .
+
+
+###  http://purl.org/dc/terms/language
+terms:language rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/license
+terms:license rdf:type owl:AnnotationProperty ;
+              rdfs:range rdfs:Literal ;
+              rdfs:domain mls:Dataset .
+
+
+###  http://purl.org/dc/terms/source
+terms:source rdf:type owl:AnnotationProperty ;
+             rdfs:range rdfs:Literal ;
+             rdfs:domain mls:Dataset .
+
+
+###  http://purl.org/dc/terms/title
+terms:title rdf:type owl:AnnotationProperty ;
+            rdfs:range xsd:string ;
+            rdfs:domain mls:Dataset .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#hasCollectionDate
+:hasCollectionDate rdf:type owl:AnnotationProperty ;
+                   rdfs:comment "has collection date" ;
+                   rdfs:range xsd:date ;
+                   rdfs:domain mls:Dataset .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#hasOriginal_URL
+:hasOriginal_URL rdf:type owl:AnnotationProperty ;
+                 rdfs:label "has original URL" ;
+                 rdfs:range rdfs:Literal ;
+                 rdfs:domain mls:Dataset .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#hasPaperURL
+:hasPaperURL rdf:type owl:AnnotationProperty ;
+             rdfs:label "has paper URL" ;
+             rdfs:range rdfs:Literal ;
+             rdfs:domain mls:Dataset .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#hasPlatformURL
+:hasPlatformURL rdf:type owl:AnnotationProperty ;
+                rdfs:label "has platform URL" ;
+                rdfs:range rdfs:Literal .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#hasPredictionsURL
+:hasPredictionsURL rdf:type owl:AnnotationProperty ;
+                   rdfs:label "has predictions URL" ;
+                   rdfs:range rdfs:Literal ;
+                   rdfs:domain mls:Run .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#hasRelatedTerms
+:hasRelatedTerms rdf:type owl:AnnotationProperty ;
+                 rdfs:label "has related term" ;
+                 rdfs:range rdfs:Literal ;
+                 rdfs:domain mls:Dataset ,
+                             mls:Run .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#has_data_split_url
+:has_data_split_url rdf:type owl:AnnotationProperty ;
+                    rdfs:label "has data split url" ;
+                    rdfs:range rdfs:Literal ;
+                    rdfs:domain mls:Task .
+
+
+###  http://www.w3.org/2002/07/owl#sameAs
+owl:sameAs rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#broader
+skos:broader rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#member
+skos:member rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#narrower
+skos:narrower rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#prefLabel
+skos:prefLabel rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.w3.org/2004/02/skos/core#Collection
+skos:Collection rdf:type owl:Class ;
+                rdfs:label "Collection" .
+
+
+###  http://www.w3.org/2004/02/skos/core#Concept
+skos:Concept rdf:type owl:Class ;
+             rdfs:label "Concept" .
+
+
+###  http://www.w3.org/2004/02/skos/core#ConceptScheme
+skos:ConceptScheme rdf:type owl:Class ;
+                   rdfs:label "Concept Scheme" .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#AQLearning
+:AQLearning rdf:type owl:NamedIndividual ,
+                     skos:Concept ;
+            skos:broader :Supervised_Learning_Algorithm ;
+            skos:prefLabel "AQ Learning" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#ActiveLearning
+:ActiveLearning rdf:type owl:NamedIndividual ,
+                         skos:Concept ;
+                skos:prefLabel "Active Learning" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#AdaptiveWebSites
+:AdaptiveWebSites rdf:type owl:NamedIndividual ,
+                           skos:Concept ;
+                  skos:prefLabel "Adaptive Websites" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#AdversarialLearning
+:AdversarialLearning rdf:type owl:NamedIndividual ,
+                              skos:Concept ;
+                     skos:prefLabel "Adversarial Learning" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#AffectiveComputing
+:AffectiveComputing rdf:type owl:NamedIndividual ,
+                             skos:Concept ;
+                    skos:prefLabel "Affective Computing" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#AffinityPropagation
+:AffinityPropagation rdf:type owl:NamedIndividual ,
+                              skos:Concept ;
+                     skos:broader :ClusteringAlgorithm ;
+                     skos:prefLabel "Affinity Propagation" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#AnalyticalLearning
+:AnalyticalLearning rdf:type owl:NamedIndividual ,
+                             skos:Concept ;
+                    skos:prefLabel "Analytical Learning" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#AnomalyDetection
+:AnomalyDetection rdf:type owl:NamedIndividual ,
+                           skos:Concept ;
+                  skos:prefLabel "Anomaly Detection" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#AreaUnderCurveMeasurement
+:AreaUnderCurveMeasurement rdf:type owl:NamedIndividual ,
+                                    skos:Concept ;
+                           skos:narrower :J48AreaUnderCurve ,
+                                         :cfs_subset_eval_decision_stump_auc ,
+                                         :cfs_subset_eval_naive_bayes_auc ,
+                                         :csf_subject_eval_knn1n_auc ,
+                                         :decision_stump_auc ,
+                                         :knn1n_area_under_curve ;
+                           skos:prefLabel "Area Under Curve Measurement" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#Area_Under_Curve_Evaluation_Metric
+:Area_Under_Curve_Evaluation_Metric rdf:type owl:NamedIndividual ,
+                                             skos:Concept ;
+                                    skos:narrower :area_under_curve ,
+                                                  :mean_weighted_area_under_ROC_curve ,
+                                                  :single_point_area_under_ROC_curve ;
+                                    skos:prefLabel "Area Under Curve Evaluation Metric" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#ArtificialNeuralNetwork
+:ArtificialNeuralNetwork rdf:type owl:NamedIndividual ,
+                                  skos:Concept ;
+                         skos:prefLabel "Artificial Neural Network Algorithm" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#Association
+:Association rdf:type owl:NamedIndividual ,
+                      skos:Concept ;
+             skos:prefLabel "Association" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#AssociationRuleLearningAlgorithm
+:AssociationRuleLearningAlgorithm rdf:type owl:NamedIndividual ,
+                                           skos:Concept ;
+                                  skos:prefLabel "Association Rule Learning Algorithm" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#BIRCH
+:BIRCH rdf:type owl:NamedIndividual ,
+                skos:Concept ;
+       skos:broader :HierarchicalClustering ;
+       skos:prefLabel "BIRCH" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#Bayesian
+:Bayesian rdf:type owl:NamedIndividual ,
+                   skos:Concept ;
+          skos:prefLabel "Bayesian Algorithm" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#BayesianLearning
+:BayesianLearning rdf:type owl:NamedIndividual ,
+                           skos:Concept ;
+                  skos:prefLabel "Bayesian Learning" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#Bioinformatics
+:Bioinformatics rdf:type owl:NamedIndividual ,
+                         skos:Concept ;
+                skos:prefLabel "Bioinformatics" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#Boosting
+:Boosting rdf:type owl:NamedIndividual ,
+                   skos:Concept ;
+          skos:prefLabel "Boosting" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#BrainMachineInterfaces
+:BrainMachineInterfaces rdf:type owl:NamedIndividual ,
+                                 skos:Concept ;
+                        skos:prefLabel "Brain-Machine Interfaces" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#CFS_Subject_Eval_Decision_Stump
+:CFS_Subject_Eval_Decision_Stump rdf:type owl:NamedIndividual ,
+                                          skos:Concept ;
+                                 skos:broader :cfs_subject_evaluation ;
+                                 skos:narrower :cfs_subject_eval_decision_stump_error_rate ,
+                                               :cfs_subset_eval_decision_stump_auc ,
+                                               :cfs_subset_eval_decision_stump_kappa ;
+                                 skos:prefLabel "CFS Subject Eval Decision Stump" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#CFS_Subject_Eval_KNN1N
+:CFS_Subject_Eval_KNN1N rdf:type owl:NamedIndividual ,
+                                 skos:Concept ;
+                        skos:broader :cfs_subject_evaluation ;
+                        skos:narrower :csf_subject_eval_knn1n_auc ,
+                                      :csf_subject_eval_knn1n_err_rate ,
+                                      :csf_subject_eval_knn1n_kappa ;
+                        skos:prefLabel "CFS Subject Eval KNN1N" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#CFS_Subject_Eval_Naive_Bayes
+:CFS_Subject_Eval_Naive_Bayes rdf:type owl:NamedIndividual ,
+                                       skos:Concept ;
+                              skos:broader :cfs_subject_evaluation ;
+                              skos:narrower :cfs_subset_eval_naive_bayes_auc ,
+                                            :cfs_subset_eval_naive_bayes_err_rate ,
+                                            :cfs_subset_eval_naive_bayes_kappa ;
+                              skos:prefLabel "CFS Subject Eval Naive Bayes" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#CHAMELEON
+:CHAMELEON rdf:type owl:NamedIndividual ,
+                    skos:Concept ;
+           skos:broader :HierarchicalClustering ;
+           skos:prefLabel "CHAMELEON" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#CLARA
+:CLARA rdf:type owl:NamedIndividual ,
+                skos:Concept ;
+       skos:broader :PartitionalClustering ;
+       skos:prefLabel "CLARA" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#CLARANS
+:CLARANS rdf:type owl:NamedIndividual ,
+                  skos:Concept ;
+         skos:broader :PartitionalClustering ;
+         skos:prefLabel "CLARANS" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#CLIQUE
+:CLIQUE rdf:type owl:NamedIndividual ,
+                 skos:Concept ;
+        skos:broader :PartitionalClustering ;
+        skos:prefLabel "CLIQUE" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#CURE
+:CURE rdf:type owl:NamedIndividual ,
+               skos:Concept ;
+      skos:broader :HierarchicalClustering ;
+      skos:prefLabel "CURE" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#CausalModeling
+:CausalModeling rdf:type owl:NamedIndividual ,
+                         skos:Concept ;
+                skos:prefLabel "Causal Modeling" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#Cheminformatics
+:Cheminformatics rdf:type owl:NamedIndividual ,
+                          skos:Concept ;
+                 skos:prefLabel "Cheminformatics" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#ClassEntropy
+:ClassEntropy rdf:type owl:NamedIndividual ,
+                       skos:Concept ;
+              skos:broader :Entropy ;
+              skos:prefLabel "Class Entropy" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#Classification
+:Classification rdf:type owl:NamedIndividual ,
+                         skos:Concept ;
+                skos:narrower :Supervised_Classification ;
+                skos:prefLabel "Classification" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#ClassifyingDNAsequences
+:ClassifyingDNAsequences rdf:type owl:NamedIndividual ,
+                                  skos:Concept ;
+                         skos:prefLabel "DNA Sequences Classification" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#Clustering
+:Clustering rdf:type owl:NamedIndividual ,
+                     skos:Concept ;
+            skos:prefLabel "Clustering" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#ClusteringAlgorithm
+:ClusteringAlgorithm rdf:type owl:NamedIndividual ,
+                              skos:Concept ;
+                     skos:broader :MinimumSpanningTree ;
+                     skos:narrower :AffinityPropagation ,
+                                   :HierarchicalClustering ,
+                                   :PartitionalClustering ,
+                                   :SpectralClustering ;
+                     skos:prefLabel "Clustering Algorithm" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#Complexity
+:Complexity rdf:type owl:NamedIndividual ,
+                     skos:Concept ;
+            skos:narrower :class_complexity ,
+                          :class_complexity_gain ,
+                          :mean_class_complexity ,
+                          :mean_class_complexity_gain ,
+                          :mean_prior_class_complexity ,
+                          :prior_class_complexity ;
+            skos:prefLabel "Complexity" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#ComputationalAdversiting
+:ComputationalAdversiting rdf:type owl:NamedIndividual ,
+                                   skos:Concept ;
+                          skos:prefLabel "Computational Adversiting" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#ComputationalFinance
+:ComputationalFinance rdf:type owl:NamedIndividual ,
+                               skos:Concept ;
+                      skos:prefLabel "Computational Finance" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#ComputerVision
+:ComputerVision rdf:type owl:NamedIndividual ,
+                         skos:Concept ;
+                skos:prefLabel "Computer Vision" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#ConceptLearning
+:ConceptLearning rdf:type owl:NamedIndividual ,
+                          skos:Concept ;
+                 skos:prefLabel "Concept Learning" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#CurriculumLearning
+:CurriculumLearning rdf:type owl:NamedIndividual ,
+                             skos:Concept ;
+                    skos:prefLabel "Curriculum Learning" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#DBSCAN
+:DBSCAN rdf:type owl:NamedIndividual ,
+                 skos:Concept ;
+        skos:broader :PartitionalClustering ;
+        skos:prefLabel "DBSCAN" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#Dataset_Characteristic
+:Dataset_Characteristic rdf:type owl:NamedIndividual ,
+                                 skos:Collection ;
+                        skos:member :AreaUnderCurveMeasurement ,
+                                    :Decision_Stump ,
+                                    :Entropy ,
+                                    :ErrorRateMeasurement ,
+                                    :J48_Measurement ,
+                                    :KNN1N ,
+                                    :KappaMeasurement ,
+                                    :Maximum_Measurement ,
+                                    :Mean_Measurement ,
+                                    :Minimum_Measurement ,
+                                    :Naive_Bayes_Measurement ,
+                                    :Quantity_Measurement ,
+                                    :Quartile_Measurement ,
+                                    :REP_Tree ,
+                                    :Random_Tree ,
+                                    :Standard_Deviation ,
+                                    :auto_corellation ,
+                                    :cfs_subject_evaluation ;
+                        skos:prefLabel "Dataset Characteristic" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#DecisionTree
+:DecisionTree rdf:type owl:NamedIndividual ,
+                       skos:Concept ;
+              skos:prefLabel "Decision Tree Algorithm" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#Decision_Stump
+:Decision_Stump rdf:type owl:NamedIndividual ,
+                         skos:Concept ;
+                skos:narrower :decision_stump_auc ,
+                              :decision_stump_err_rate ,
+                              :decision_stump_kappa ;
+                skos:prefLabel "Decision Stump" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#DeepLearning
+:DeepLearning rdf:type owl:NamedIndividual ,
+                       skos:Concept ;
+              skos:prefLabel "Deep Learning" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#DeepLearningAlgorithm
+:DeepLearningAlgorithm rdf:type owl:NamedIndividual ,
+                                skos:Concept ;
+                       skos:prefLabel "Deep Learning Algorithm" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#DimensionalityReduction
+:DimensionalityReduction rdf:type owl:NamedIndividual ,
+                                  skos:Concept ;
+                         skos:prefLabel "Dimensionality Reduction" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#DimensionalityReductionAlgorithm
+:DimensionalityReductionAlgorithm rdf:type owl:NamedIndividual ,
+                                           skos:Concept ;
+                                  skos:prefLabel "Dimensionality Reduction Algorithm" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#EnsembleAlgorithm
+:EnsembleAlgorithm rdf:type owl:NamedIndividual ,
+                            skos:Concept ;
+                   skos:prefLabel "Ensemble Algorithm" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#EnsembleLearning
+:EnsembleLearning rdf:type owl:NamedIndividual ,
+                           skos:Concept ;
+                  skos:prefLabel "Ensemble Learning" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#Entropy
+:Entropy rdf:type owl:NamedIndividual ,
+                  skos:Concept ;
+         skos:narrower :ClassEntropy ,
+                       :MaxAttributeEntropy ,
+                       :MinAttributeEntropy ;
+         skos:prefLabel "Entropy" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#ErrorRateMeasurement
+:ErrorRateMeasurement rdf:type owl:NamedIndividual ,
+                               skos:Concept ;
+                      skos:narrower :J48ErrorRate ,
+                                    :cfs_subject_eval_decision_stump_error_rate ,
+                                    :cfs_subset_eval_naive_bayes_err_rate ,
+                                    :csf_subject_eval_knn1n_err_rate ,
+                                    :decision_stump_err_rate ,
+                                    :knn1n_error_rate ;
+                      skos:prefLabel "Error Rate Measurement" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#EvaluationProcedure
+:EvaluationProcedure rdf:type owl:NamedIndividual ,
+                              skos:Collection ;
+                     skos:member :crossvalidation ,
+                                 :holdout ,
+                                 :test_on_training_data ,
+                                 :test_then_train ;
+                     skos:prefLabel "Evaluation Procedure" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#Evaluation_Measure
+:Evaluation_Measure rdf:type owl:NamedIndividual ,
+                             skos:Collection ;
+                    skos:member :Area_Under_Curve_Evaluation_Metric ,
+                                :Complexity ,
+                                :Execution ,
+                                :Kohavi_Wolpert_Decomposition ,
+                                :Kononenko_Branko_Score ,
+                                :accuracy ,
+                                :bias ,
+                                :binomial_test ,
+                                :c_index ,
+                                :chi_squared ,
+                                :class_distribution_entropy ,
+                                :correlation_coefficient ,
+                                :cortana_quality ,
+                                :cost ,
+                                :coverage ,
+                                :error ,
+                                :f_measure ,
+                                :information_gain ,
+                                :jaccard ,
+                                :kappa ,
+                                :os_information ,
+                                :positives ,
+                                :precision ,
+                                :prediction_confusion_matrix ,
+                                :probability ,
+                                :quality ,
+                                :recall ,
+                                :schimark_benchmark ,
+                                :unclassified_instance_count ,
+                                :variance ;
+                    skos:prefLabel "Evaluation Measure" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#Execution
+:Execution rdf:type owl:NamedIndividual ,
+                    skos:Concept ;
+           skos:narrower :build_cpu_time ,
+                         :build_memory ,
+                         :ram_hours ,
+                         :run_cpu_time ,
+                         :run_memory ,
+                         :run_virtual_memory ,
+                         :usercpu_time_millis ,
+                         :usercpu_time_millis_training ,
+                         :wall_clock_time_millis_testing ,
+                         :wall_clock_time_millis_training ;
+           skos:prefLabel "Execution metric" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#ExpectationMaximization
+:ExpectationMaximization rdf:type owl:NamedIndividual ,
+                                  skos:Concept ;
+                         skos:broader :PartitionalClustering ;
+                         skos:prefLabel "Expectation - Maximization" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#FactPrediction
+:FactPrediction rdf:type owl:NamedIndividual ,
+                         skos:Concept ;
+                skos:prefLabel "Fact Prediction" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#FeatureCharacteristic
+:FeatureCharacteristic rdf:type owl:NamedIndividual ,
+                                skos:Collection ;
+                       skos:member :datatype ,
+                                   :number_of_distinct_values ,
+                                   :number_of_missing_values ;
+                       skos:prefLabel "Feature Characteristic" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#FeatureStatistic
+:FeatureStatistic rdf:type owl:NamedIndividual ,
+                           skos:Concept ;
+                  skos:narrower :InstancesWithMissingValuesPercentage ,
+                                :binary_features_percentage ,
+                                :dimensionality ,
+                                :equivalent_number_of_atts ,
+                                :majority_class_percentage ,
+                                :majority_class_size ,
+                                :minority_class_percentage ,
+                                :minortity_class_size ,
+                                :missing_values_percentage ,
+                                :number_of_binary_features ,
+                                :number_of_classes ,
+                                :number_of_features ,
+                                :number_of_instances ,
+                                :number_of_instances_with_missing_values ,
+                                :number_of_missing_values ,
+                                :number_of_numeric_features ,
+                                :number_of_symbolic_features ,
+                                :numeric_features_percentage ,
+                                :symbolic_features_percentage ;
+                  skos:prefLabel "Feature Statistic" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#FederatedLearning
+:FederatedLearning rdf:type owl:NamedIndividual ,
+                            skos:Concept ;
+                   skos:prefLabel "Federated Learning" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#FewShotLearning
+:FewShotLearning rdf:type owl:NamedIndividual ,
+                          skos:Concept ;
+                 skos:prefLabel "Few-shot Learning" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#Forecasting
+:Forecasting rdf:type owl:NamedIndividual ,
+                      skos:Concept ;
+             skos:prefLabel "Forecasting" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#FraudDetection
+:FraudDetection rdf:type owl:NamedIndividual ,
+                         skos:Concept ;
+                skos:prefLabel "Fraud Detection" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#FuzzyC-Means
+:FuzzyC-Means rdf:type owl:NamedIndividual ,
+                       skos:Concept ;
+              skos:broader :FuzzyClustering ;
+              skos:prefLabel "Fuzzy c-means" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#FuzzyClustering
+:FuzzyClustering rdf:type owl:NamedIndividual ,
+                          skos:Concept ;
+                 skos:broader :PartitionalClustering ;
+                 skos:narrower :FuzzyC-Means ,
+                               :FuzzyK-Modes ;
+                 skos:prefLabel "Fuzzy Clustering" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#FuzzyK-Modes
+:FuzzyK-Modes rdf:type owl:NamedIndividual ,
+                       skos:Concept ;
+              skos:broader :FuzzyClustering ;
+              skos:prefLabel "Fuzzy k-modes" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#GamePlaying
+:GamePlaying rdf:type owl:NamedIndividual ,
+                      skos:Concept ;
+             skos:prefLabel "Game Playing" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#GenerativeModeling
+:GenerativeModeling rdf:type owl:NamedIndividual ,
+                             skos:Concept ;
+                    skos:prefLabel "Generative Modeling" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#HierarchicalClustering
+:HierarchicalClustering rdf:type owl:NamedIndividual ,
+                                 skos:Concept ;
+                        skos:broader :ClusteringAlgorithm ;
+                        skos:narrower :BIRCH ,
+                                      :CHAMELEON ,
+                                      :CURE ,
+                                      :ROCK ;
+                        skos:prefLabel "Hierarchical Clustering" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#IncrementalLearning
+:IncrementalLearning rdf:type owl:NamedIndividual ,
+                              skos:Concept ;
+                     skos:prefLabel "Incremental Learning" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#InductiveLearning
+:InductiveLearning rdf:type owl:NamedIndividual ,
+                            skos:Concept ;
+                   skos:prefLabel "Inductive Learning" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#InformationRetrieval
+:InformationRetrieval rdf:type owl:NamedIndividual ,
+                               skos:Concept ;
+                      skos:prefLabel "Information Retrieval" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#InstanceBasedAlgorithm
+:InstanceBasedAlgorithm rdf:type owl:NamedIndividual ,
+                                 skos:Concept ;
+                        skos:prefLabel "Instance Based Algorithm" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#InstancesWithMissingValuesPercentage
+:InstancesWithMissingValuesPercentage rdf:type owl:NamedIndividual ,
+                                               skos:Concept ;
+                                      skos:broader :FeatureStatistic ;
+                                      skos:prefLabel "instances with missing values percentage" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#J48AreaUnderCurve
+:J48AreaUnderCurve rdf:type owl:NamedIndividual ,
+                            skos:Concept ;
+                   skos:broader :AreaUnderCurveMeasurement ,
+                                :J48_Measurement ;
+                   skos:narrower :j48_00001._area_under_curve ,
+                                 :j48_0001._area_under_curve ,
+                                 :j48_001._area_under_curve ;
+                   skos:prefLabel "J48 Area Under Curve" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#J48ErrorRate
+:J48ErrorRate rdf:type owl:NamedIndividual ,
+                       skos:Concept ;
+              skos:broader :ErrorRateMeasurement ,
+                           :J48_Measurement ;
+              skos:narrower :j48_00001_error_rate ,
+                            :j48_0001_error_rate ,
+                            :j48_001_error_rate ;
+              skos:prefLabel "J48 Error Rate" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#J48Kappa
+:J48Kappa rdf:type owl:NamedIndividual ,
+                   skos:Concept ;
+          skos:broader :J48_Measurement ,
+                       :KappaMeasurement ;
+          skos:narrower :j48_00001_kappa ,
+                        :j48_0001_kappa ,
+                        :j48_001_kappa ;
+          skos:prefLabel "J48 Kappa" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#J48_Measurement
+:J48_Measurement rdf:type owl:NamedIndividual ,
+                          skos:Concept ;
+                 skos:narrower :J48AreaUnderCurve ,
+                               :J48ErrorRate ,
+                               :J48Kappa ;
+                 skos:prefLabel "J48 Measurement" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#K-Means
+:K-Means rdf:type owl:NamedIndividual ,
+                  skos:Concept ;
+         skos:broader :PartitionalClustering ;
+         skos:narrower :MiniBatchK-Means ;
+         skos:prefLabel "K-means" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#K-Medians
+:K-Medians rdf:type owl:NamedIndividual ,
+                    skos:Concept ;
+           skos:broader :PartitionalClustering ;
+           skos:prefLabel "K-medians" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#KNN1N
+:KNN1N rdf:type owl:NamedIndividual ,
+                skos:Concept ;
+       skos:prefLabel "KNN1N" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#KappaMeasurement
+:KappaMeasurement rdf:type owl:NamedIndividual ,
+                           skos:Concept ;
+                  skos:narrower :J48Kappa ,
+                                :cfs_subset_eval_decision_stump_kappa ,
+                                :cfs_subset_eval_naive_bayes_kappa ,
+                                :csf_subject_eval_knn1n_kappa ,
+                                :decision_stump_kappa ,
+                                :knn1n_kappa ;
+                  skos:prefLabel "Kappa Measurement" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#Kohavi_Wolpert_Decomposition
+:Kohavi_Wolpert_Decomposition rdf:type owl:NamedIndividual ,
+                                       skos:Concept ;
+                              skos:narrower :kohavi_wolpert_decomposition_bias_squared ,
+                                            :kohavi_wolpert_decomposition_error ,
+                                            :kohavi_wolpert_decomposition_sigma_squared ,
+                                            :kohavi_wolpert_decomposition_variance ;
+                              skos:prefLabel "Kohavi Wolpert Decomposition" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#Kononenko_Branko_Score
+:Kononenko_Branko_Score rdf:type owl:NamedIndividual ,
+                                 skos:Concept ;
+                        skos:narrower :kononenko_branko_information_score ,
+                                      :kononenko_branko_relative_information_score ,
+                                      :mean_kononenko_branko_information_score ;
+                        skos:prefLabel "Kononenko Branko Score" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#LearningMethod
+:LearningMethod rdf:type owl:NamedIndividual ,
+                         skos:Collection ;
+                skos:member :ActiveLearning ,
+                            :AdversarialLearning ,
+                            :AnalyticalLearning ,
+                            :BayesianLearning ,
+                            :ConceptLearning ,
+                            :CurriculumLearning ,
+                            :EnsembleLearning ,
+                            :FederatedLearning ,
+                            :FewShotLearning ,
+                            :IncrementalLearning ,
+                            :InductiveLearning ,
+                            :MetaLearning ,
+                            :MetricLearning ,
+                            :MultiModalLearning ,
+                            :MultiTaskLearning ,
+                            :OnlineLearning ,
+                            :Reinforcement_Learning_Algorithm ,
+                            :SelfSupervisedLearning ,
+                            :SelfTaughtLearning ,
+                            :Semi-supervised_Learning_Algorithm ,
+                            :SequentialLearning ,
+                            :Supervised_Learning_Algorithm ,
+                            :TargetedLearning ,
+                            :TransferLearning ,
+                            :Unsupervised_Learning_Algorithm ;
+                skos:prefLabel "Learning Method" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#Learning_Curve_Estimation
+:Learning_Curve_Estimation rdf:type owl:NamedIndividual ,
+                                    skos:Concept ;
+                           skos:prefLabel "Learning Curve Estimation" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#LinkDiscovery
+:LinkDiscovery rdf:type owl:NamedIndividual ,
+                        skos:Concept ;
+               skos:prefLabel "Link Discovery" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#LinkPrediction
+:LinkPrediction rdf:type owl:NamedIndividual ,
+                         skos:Concept ;
+                skos:prefLabel "Link Prediction" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#MachineLearningAlgorithm
+:MachineLearningAlgorithm rdf:type owl:NamedIndividual ,
+                                   skos:Collection ;
+                          skos:member :ArtificialNeuralNetwork ,
+                                      :AssociationRuleLearningAlgorithm ,
+                                      :Bayesian ,
+                                      :ClusteringAlgorithm ,
+                                      :DecisionTree ,
+                                      :DeepLearningAlgorithm ,
+                                      :DimensionalityReductionAlgorithm ,
+                                      :EnsembleAlgorithm ,
+                                      :InstanceBasedAlgorithm ,
+                                      :RegressionAlgorithm ,
+                                      :RegularizationAlgorithm ,
+                                      :ReinforcementLearningAlgorithm ,
+                                      :RuleBased ;
+                          skos:prefLabel "Machine Learning Algorithm" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#MachineLearningField
+:MachineLearningField rdf:type owl:NamedIndividual ,
+                               skos:Collection ;
+                      skos:member :AdaptiveWebSites ,
+                                  :AffectiveComputing ,
+                                  :Bioinformatics ,
+                                  :BrainMachineInterfaces ,
+                                  :Cheminformatics ,
+                                  :ClassifyingDNAsequences ,
+                                  :ComputationalAdversiting ,
+                                  :ComputationalFinance ,
+                                  :ComputerVision ,
+                                  :FactPrediction ,
+                                  :FraudDetection ,
+                                  :GamePlaying ,
+                                  :InformationRetrieval ,
+                                  :LinkDiscovery ,
+                                  :MachinePerception ,
+                                  :MedicalDiagnosis ,
+                                  :Metaheuristics ,
+                                  :NaturalLanguageProcessing ,
+                                  :ObjectDetection ,
+                                  :Optimization ,
+                                  :RecomenderSystems ,
+                                  :Robotics ,
+                                  :SearchEngines ,
+                                  :SentimentAnalysis ,
+                                  :SequenceMining ,
+                                  :SoftwareEngineering ,
+                                  :SpeechAndHandwritingRecognition ,
+                                  :StockMarketAnalysis ,
+                                  :StructuralHealthMonitoring ,
+                                  :SyntacticLanguageProcessing ;
+                      skos:prefLabel "Machine Learning Field" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#MachineLearningTaskType
+:MachineLearningTaskType rdf:type owl:NamedIndividual ,
+                                  skos:Collection ;
+                         skos:member :AnomalyDetection ,
+                                     :Association ,
+                                     :CausalModeling ,
+                                     :Classification ,
+                                     :Clustering ,
+                                     :DimensionalityReduction ,
+                                     :Forecasting ,
+                                     :GenerativeModeling ,
+                                     :LinkPrediction ,
+                                     :MachineTranslation ,
+                                     :Metaheuristic ,
+                                     :MultivariateQuerying ,
+                                     :ObjectDetection ,
+                                     :ProbabilityDensity_and_MassFunctionEstimation ,
+                                     :Ranking ,
+                                     :Recommendation ,
+                                     :Regression ,
+                                     :Sampling ,
+                                     :SequenceLabeling ,
+                                     :SimilarityMatching ,
+                                     :StructuredPrediction ,
+                                     :Summarization ,
+                                     :Synthesis ,
+                                     :Transcription ;
+                         skos:prefLabel "Machine Learning Task Type" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#MachinePerception
+:MachinePerception rdf:type owl:NamedIndividual ,
+                            skos:Concept ;
+                   skos:prefLabel "Machine Perception" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#MachineTranslation
+:MachineTranslation rdf:type owl:NamedIndividual ,
+                             skos:Concept ;
+                    skos:prefLabel "Machine Translation" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#MaxAttributeEntropy
+:MaxAttributeEntropy rdf:type owl:NamedIndividual ,
+                              skos:Concept ;
+                     skos:broader :Entropy ,
+                                  :Maximum_Measurement ;
+                     skos:prefLabel "Max Attribute Entropy" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#Maximum_Measurement
+:Maximum_Measurement rdf:type owl:NamedIndividual ,
+                              skos:Concept ;
+                     skos:narrower :MaxAttributeEntropy ,
+                                   :max_kurtosis_of_numeric_atts ,
+                                   :max_means_of_numeric_atts ,
+                                   :max_mutual_information ,
+                                   :max_nominal_att_distinct_values ,
+                                   :max_skewness_of_numeric_atts ,
+                                   :max_standard_dev_of_numeric_atts ;
+                     skos:prefLabel "Maximum Measurement" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#MeanShift
+:MeanShift rdf:type owl:NamedIndividual ,
+                    skos:Concept ;
+           skos:broader :PartitionalClustering ;
+           skos:prefLabel "Mean-Shift" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#Mean_Measurement
+:Mean_Measurement rdf:type owl:NamedIndividual ,
+                           skos:Concept ;
+                  skos:narrower :mean_attribute_entropy ,
+                                :mean_kurtosis_of_numeric_atts ,
+                                :mean_means_of_numeric_atts ,
+                                :mean_mutual_information ,
+                                :mean_noise_to_signal_ratio ,
+                                :mean_nominal_att_distinct_values ,
+                                :mean_skewness_of_numeric_atts ,
+                                :mean_standard_dev_of_numeric_atts ;
+                  skos:prefLabel "Mean Measurement" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#MedicalDiagnosis
+:MedicalDiagnosis rdf:type owl:NamedIndividual ,
+                           skos:Concept ;
+                  skos:prefLabel "Medical Diagnosis" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#MetaLearning
+:MetaLearning rdf:type owl:NamedIndividual ,
+                       skos:Concept ;
+              skos:prefLabel "Meta Learning" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#Metaheuristic
+:Metaheuristic rdf:type owl:NamedIndividual ,
+                        skos:Concept ;
+               skos:prefLabel "Metaheuristic" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#Metaheuristics
+:Metaheuristics rdf:type owl:NamedIndividual ,
+                         skos:Concept ;
+                skos:prefLabel "Metaheuristics" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#MetricLearning
+:MetricLearning rdf:type owl:NamedIndividual ,
+                         skos:Concept ;
+                skos:prefLabel "Metric Learning" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#MinAttributeEntropy
+:MinAttributeEntropy rdf:type owl:NamedIndividual ,
+                              skos:Concept ;
+                     skos:broader :Entropy ,
+                                  :Minimum_Measurement ;
+                     skos:prefLabel "Min Attribute Entropy" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#MiniBatchK-Means
+:MiniBatchK-Means rdf:type owl:NamedIndividual ,
+                           skos:Concept ;
+                  skos:broader :K-Means ;
+                  skos:prefLabel "Mini batch k-means" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#MinimumSpanningTree
+:MinimumSpanningTree rdf:type owl:NamedIndividual ,
+                              skos:Concept ;
+                     skos:broader :ClusteringAlgorithm ;
+                     skos:prefLabel "Minimum spanning tree" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#Minimum_Measurement
+:Minimum_Measurement rdf:type owl:NamedIndividual ,
+                              skos:Concept ;
+                     skos:narrower :MinAttributeEntropy ,
+                                   :min_kurtosis_of_numeric_atts ,
+                                   :min_means_of_numeric_atts ,
+                                   :min_mutual_information ,
+                                   :min_nominal_att_distinct_values ,
+                                   :min_skewness_of_numeric_atts ,
+                                   :min_standard_dev_of_numeric_atts ;
+                     skos:prefLabel "Minimum Measurement" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#MultiModalLearning
+:MultiModalLearning rdf:type owl:NamedIndividual ,
+                             skos:Concept ;
+                    skos:prefLabel "Multi-modal Learning" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#MultiTaskLearning
+:MultiTaskLearning rdf:type owl:NamedIndividual ,
+                            skos:Concept ;
+                   skos:prefLabel "Multi-task Learning" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#MultivariateQuerying
+:MultivariateQuerying rdf:type owl:NamedIndividual ,
+                               skos:Concept ;
+                      skos:prefLabel "Multivariate Querying" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#Naive_Bayes_Measurement
+:Naive_Bayes_Measurement rdf:type owl:NamedIndividual ,
+                                  skos:Concept ;
+                         skos:broader :FeatureStatistic ;
+                         skos:prefLabel "Naive Bayes Measurement" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#NaturalLanguageProcessing
+:NaturalLanguageProcessing rdf:type owl:NamedIndividual ,
+                                    skos:Concept ;
+                           skos:prefLabel "Natural Language Processing" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#OPTICS
+:OPTICS rdf:type owl:NamedIndividual ,
+                 skos:Concept ;
+        skos:broader :PartitionalClustering ;
+        skos:prefLabel "OPTICS" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#ObjectDetection
+:ObjectDetection rdf:type owl:NamedIndividual ,
+                          skos:Concept ;
+                 skos:prefLabel "Object Detection" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#OnlineLearning
+:OnlineLearning rdf:type owl:NamedIndividual ,
+                         skos:Concept ;
+                skos:prefLabel "Online Learning" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#Optimization
+:Optimization rdf:type owl:NamedIndividual ,
+                       skos:Concept ;
+              skos:prefLabel "Optimization" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#PAM
+:PAM rdf:type owl:NamedIndividual ,
+              skos:Concept ;
+     skos:broader :PartitionalClustering ;
+     skos:prefLabel "PAM" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#PartitionalClustering
+:PartitionalClustering rdf:type owl:NamedIndividual ,
+                                skos:Concept ;
+                       skos:broader :ClusteringAlgorithm ;
+                       skos:narrower :CLARA ,
+                                     :CLARANS ,
+                                     :CLIQUE ,
+                                     :DBSCAN ,
+                                     :ExpectationMaximization ,
+                                     :FuzzyClustering ,
+                                     :K-Means ,
+                                     :K-Medians ,
+                                     :MeanShift ,
+                                     :OPTICS ,
+                                     :PAM ;
+                       skos:prefLabel "Partitional Clustering" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#ProbabilityDensity_and_MassFunctionEstimation
+:ProbabilityDensity_and_MassFunctionEstimation rdf:type owl:NamedIndividual ,
+                                                        skos:Concept ;
+                                               skos:prefLabel "Probability density and mass function estimation" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#Quantity_Measurement
+:Quantity_Measurement rdf:type owl:NamedIndividual ,
+                               skos:Concept ;
+                      skos:narrower :equivalent_number_of_atts ,
+                                    :majority_class_size ,
+                                    :minortity_class_size ,
+                                    :number_of_binary_features ,
+                                    :number_of_classes ,
+                                    :number_of_features ,
+                                    :number_of_instances ,
+                                    :number_of_instances_with_missing_values ,
+                                    :number_of_missing_values ,
+                                    :number_of_numeric_features ,
+                                    :number_of_symbolic_features ;
+                      skos:prefLabel "Quantity Measurement" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#Quartile_Measurement
+:Quartile_Measurement rdf:type owl:NamedIndividual ,
+                               skos:Concept ;
+                      skos:prefLabel "Quartile Measurement" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#REP_Tree
+:REP_Tree rdf:type owl:NamedIndividual ,
+                   skos:Concept ;
+          skos:prefLabel "REP Tree" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#ROCK
+:ROCK rdf:type owl:NamedIndividual ,
+               skos:Concept ;
+      skos:broader :HierarchicalClustering ;
+      skos:prefLabel "ROCK" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#Random_Tree
+:Random_Tree rdf:type owl:NamedIndividual ,
+                      skos:Concept ;
+             skos:prefLabel "Random Tree" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#Ranking
+:Ranking rdf:type owl:NamedIndividual ,
+                  skos:Concept ;
+         skos:prefLabel "Ranking" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#RecomenderSystems
+:RecomenderSystems rdf:type owl:NamedIndividual ,
+                            skos:Concept ;
+                   skos:prefLabel "Recomender Systems" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#Recommendation
+:Recommendation rdf:type owl:NamedIndividual ,
+                         skos:Concept ;
+                skos:prefLabel "Recommendation" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#Regression
+:Regression rdf:type owl:NamedIndividual ,
+                     skos:Concept ;
+            skos:narrower :Supervised_Regression ;
+            skos:prefLabel "Regression" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#RegressionAlgorithm
+:RegressionAlgorithm rdf:type owl:NamedIndividual ,
+                              skos:Concept ;
+                     skos:prefLabel "Regression Algorithm" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#RegularizationAlgorithm
+:RegularizationAlgorithm rdf:type owl:NamedIndividual ,
+                                  skos:Concept ;
+                         skos:prefLabel "Regularization Algorithm" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#ReinforcementLearningAlgorithm
+:ReinforcementLearningAlgorithm rdf:type owl:NamedIndividual ,
+                                         skos:Concept ;
+                                skos:prefLabel "Reinforcement Learning Algorithm" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#Reinforcement_Learning_Algorithm
+:Reinforcement_Learning_Algorithm rdf:type owl:NamedIndividual ,
+                                           skos:Concept ;
+                                  skos:prefLabel "Reinforcement Learning" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#Robotics
+:Robotics rdf:type owl:NamedIndividual ,
+                   skos:Concept ;
+          skos:prefLabel "Robotics" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#RuleBased
+:RuleBased rdf:type owl:NamedIndividual ,
+                    skos:Concept ;
+           skos:prefLabel "Rule Based Algorithm" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#Sampling
+:Sampling rdf:type owl:NamedIndividual ,
+                   skos:Concept ;
+          skos:prefLabel "Sampling" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#SearchEngines
+:SearchEngines rdf:type owl:NamedIndividual ,
+                        skos:Concept ;
+               skos:prefLabel "Search Engines" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#SelfSupervisedLearning
+:SelfSupervisedLearning rdf:type owl:NamedIndividual ,
+                                 skos:Concept ;
+                        skos:prefLabel "Self-supervised Learning" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#SelfTaughtLearning
+:SelfTaughtLearning rdf:type owl:NamedIndividual ,
+                             skos:Concept ;
+                    skos:prefLabel "Self-taught Learning" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#Semi-supervised_Learning_Algorithm
+:Semi-supervised_Learning_Algorithm rdf:type owl:NamedIndividual ,
+                                             skos:Concept ;
+                                    skos:prefLabel "Semi-supervised Learning" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#SentimentAnalysis
+:SentimentAnalysis rdf:type owl:NamedIndividual ,
+                            skos:Concept ;
+                   skos:prefLabel "Sentiment Analysis" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#SequenceLabeling
+:SequenceLabeling rdf:type owl:NamedIndividual ,
+                           skos:Concept ;
+                  skos:prefLabel "Sequence Labeling" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#SequenceMining
+:SequenceMining rdf:type owl:NamedIndividual ,
+                         skos:Concept ;
+                skos:prefLabel "Sequence Mining" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#SequentialLearning
+:SequentialLearning rdf:type owl:NamedIndividual ,
+                             skos:Concept ;
+                    skos:prefLabel "Sequential Learning" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#SimilarityMatching
+:SimilarityMatching rdf:type owl:NamedIndividual ,
+                             skos:Concept ;
+                    skos:prefLabel "Similarity Matching" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#SoftwareEngineering
+:SoftwareEngineering rdf:type owl:NamedIndividual ,
+                              skos:Concept ;
+                     skos:prefLabel "Software Engineering" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#SpectralClustering
+:SpectralClustering rdf:type owl:NamedIndividual ,
+                             skos:Concept ;
+                    skos:broader :ClusteringAlgorithm ;
+                    skos:prefLabel "Spectral Clustering" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#SpeechAndHandwritingRecognition
+:SpeechAndHandwritingRecognition rdf:type owl:NamedIndividual ,
+                                          skos:Concept ;
+                                 skos:prefLabel "Speech and Handwriting Recognition" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#Standard_Deviation
+:Standard_Deviation rdf:type owl:NamedIndividual ,
+                             skos:Concept ;
+                    skos:prefLabel "Standard Deviation" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#StockMarketAnalysis
+:StockMarketAnalysis rdf:type owl:NamedIndividual ,
+                              skos:Concept ;
+                     skos:prefLabel "Stock Market Analysis" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#StructuralHealthMonitoring
+:StructuralHealthMonitoring rdf:type owl:NamedIndividual ,
+                                     skos:Concept ;
+                            skos:prefLabel "Structural Health Monitoring" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#StructuredPrediction
+:StructuredPrediction rdf:type owl:NamedIndividual ,
+                               skos:Concept ;
+                      skos:prefLabel "Structured Prediction" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#Summarization
+:Summarization rdf:type owl:NamedIndividual ,
+                        skos:Concept ;
+               skos:prefLabel "Summarization" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#SupervisedClassification
+:SupervisedClassification rdf:type owl:NamedIndividual ,
+                                   skos:Concept ;
+                          skos:narrower :binary_classification ,
+                                        :image_classification ,
+                                        :multiclass_classification ;
+                          skos:prefLabel "Supervised Classification" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#Supervised_Classification
+:Supervised_Classification rdf:type owl:NamedIndividual ,
+                                    skos:Concept ;
+                           skos:broader :Classification ;
+                           skos:prefLabel "Supervised Classification" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#Supervised_Data_Stream_Classification
+:Supervised_Data_Stream_Classification rdf:type owl:NamedIndividual ,
+                                                skos:Concept ;
+                                       skos:prefLabel "Supervised Data Stream Classification" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#Supervised_Learning_Algorithm
+:Supervised_Learning_Algorithm rdf:type owl:NamedIndividual ,
+                                        skos:Concept ;
+                               skos:narrower :AQLearning ;
+                               skos:prefLabel "Supervised Learning" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#Supervised_Regression
+:Supervised_Regression rdf:type owl:NamedIndividual ,
+                                skos:Concept ;
+                       skos:broader :Regression ;
+                       skos:prefLabel "Supervised Regression" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#SyntacticLanguageProcessing
+:SyntacticLanguageProcessing rdf:type owl:NamedIndividual ,
+                                      skos:Concept ;
+                             skos:prefLabel "Syntactic Language Processing" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#Synthesis
+:Synthesis rdf:type owl:NamedIndividual ,
+                    skos:Concept ;
+           skos:prefLabel "Synthesis" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#TargetedLearning
+:TargetedLearning rdf:type owl:NamedIndividual ,
+                           skos:Concept ;
+                  skos:prefLabel "Targeted Learning" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#Transcription
+:Transcription rdf:type owl:NamedIndividual ,
+                        skos:Concept ;
+               skos:prefLabel "Transcription" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#TransferLearning
+:TransferLearning rdf:type owl:NamedIndividual ,
+                           skos:Concept ;
+                  skos:prefLabel "Transfer Learning" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#Unsupervised_Learning_Algorithm
+:Unsupervised_Learning_Algorithm rdf:type owl:NamedIndividual ,
+                                          skos:Concept ;
+                                 skos:prefLabel "Unsupervised Learning" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#accuracy
+:accuracy rdf:type owl:NamedIndividual ,
+                   skos:Concept ;
+          skos:prefLabel "accuracy" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#area_under_curve
+:area_under_curve rdf:type owl:NamedIndividual ,
+                           skos:Concept ;
+                  skos:broader :Area_Under_Curve_Evaluation_Metric ;
+                  skos:prefLabel "area under curve" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#auto_corellation
+:auto_corellation rdf:type owl:NamedIndividual ,
+                           skos:Concept ;
+                  skos:prefLabel "Auto Correlation" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#average_cost
+:average_cost rdf:type owl:NamedIndividual ,
+                       skos:Concept ;
+              skos:broader :cost ;
+              skos:prefLabel "average cost" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#bias
+:bias rdf:type owl:NamedIndividual ,
+               skos:Concept ;
+      skos:narrower :webb_bias ;
+      skos:prefLabel "bias" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#binary_classification
+:binary_classification rdf:type owl:NamedIndividual ,
+                                skos:Concept ;
+                       skos:broader :SupervisedClassification ;
+                       skos:prefLabel "binary classification" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#binary_features_percentage
+:binary_features_percentage rdf:type owl:NamedIndividual ,
+                                     skos:Concept ;
+                            skos:broader :FeatureStatistic ;
+                            skos:prefLabel "binary features percentage" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#binomial_test
+:binomial_test rdf:type owl:NamedIndividual ,
+                        skos:Concept ;
+               skos:prefLabel "binomial test" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#build_cpu_time
+:build_cpu_time rdf:type owl:NamedIndividual ,
+                         skos:Concept ;
+                skos:broader :Execution ;
+                skos:prefLabel "build cpu time" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#build_memory
+:build_memory rdf:type owl:NamedIndividual ,
+                       skos:Concept ;
+              skos:broader :Execution ;
+              skos:prefLabel "build memory" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#c_index
+:c_index rdf:type owl:NamedIndividual ,
+                  skos:Concept ;
+         skos:prefLabel "c index" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#cfs_subject_eval_decision_stump_error_rate
+:cfs_subject_eval_decision_stump_error_rate rdf:type owl:NamedIndividual ,
+                                                     skos:Concept ;
+                                            skos:broader :CFS_Subject_Eval_Decision_Stump ,
+                                                         :ErrorRateMeasurement ;
+                                            skos:prefLabel "CFS Subject Eval Decision Stump error rate" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#cfs_subject_evaluation
+:cfs_subject_evaluation rdf:type owl:NamedIndividual ,
+                                 skos:Concept ;
+                        skos:narrower :CFS_Subject_Eval_Decision_Stump ,
+                                      :CFS_Subject_Eval_KNN1N ,
+                                      :CFS_Subject_Eval_Naive_Bayes ;
+                        skos:prefLabel "CFS Subject Evaluation" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#cfs_subset_eval_decision_stump_auc
+:cfs_subset_eval_decision_stump_auc rdf:type owl:NamedIndividual ,
+                                             skos:Concept ;
+                                    skos:broader :AreaUnderCurveMeasurement ,
+                                                 :CFS_Subject_Eval_Decision_Stump ;
+                                    skos:prefLabel "CFS Subject Eval Decision Stump area under curve" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#cfs_subset_eval_decision_stump_kappa
+:cfs_subset_eval_decision_stump_kappa rdf:type owl:NamedIndividual ,
+                                               skos:Concept ;
+                                      skos:broader :CFS_Subject_Eval_Decision_Stump ,
+                                                   :KappaMeasurement ;
+                                      skos:prefLabel "CFS Subject Eval Decision Stump kappa" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#cfs_subset_eval_naive_bayes_auc
+:cfs_subset_eval_naive_bayes_auc rdf:type owl:NamedIndividual ,
+                                          skos:Concept ;
+                                 skos:broader :AreaUnderCurveMeasurement ,
+                                              :CFS_Subject_Eval_Naive_Bayes ;
+                                 skos:prefLabel "CFS Subject Eval Naive Bayes area under curve" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#cfs_subset_eval_naive_bayes_err_rate
+:cfs_subset_eval_naive_bayes_err_rate rdf:type owl:NamedIndividual ,
+                                               skos:Concept ;
+                                      skos:broader :CFS_Subject_Eval_Naive_Bayes ,
+                                                   :ErrorRateMeasurement ;
+                                      skos:prefLabel "CFS Subject Eval Naive Bayes error rate" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#cfs_subset_eval_naive_bayes_kappa
+:cfs_subset_eval_naive_bayes_kappa rdf:type owl:NamedIndividual ,
+                                            skos:Concept ;
+                                   skos:broader :CFS_Subject_Eval_Naive_Bayes ,
+                                                :KappaMeasurement ;
+                                   skos:prefLabel "CFS Subject Eval Naive Bayes kappa" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#chi_squared
+:chi_squared rdf:type owl:NamedIndividual ,
+                      skos:Concept ;
+             skos:prefLabel "chi squared" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#class_complexity
+:class_complexity rdf:type owl:NamedIndividual ,
+                           skos:Concept ;
+                  skos:broader :Complexity ;
+                  skos:prefLabel "class complexity" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#class_complexity_gain
+:class_complexity_gain rdf:type owl:NamedIndividual ,
+                                skos:Concept ;
+                       skos:broader :Complexity ;
+                       skos:prefLabel "class complexity gain" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#class_distribution_entropy
+:class_distribution_entropy rdf:type owl:NamedIndividual ,
+                                     skos:Concept ;
+                            skos:narrower :joint_entropy ,
+                                          :prior_entropy ;
+                            skos:prefLabel "class distribution entropy" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#correlation_coefficient
+:correlation_coefficient rdf:type owl:NamedIndividual ,
+                                  skos:Concept ;
+                         skos:narrower :matthews_correlation_coefficient ,
+                                       :pearson_correlation_coefficient ;
+                         skos:prefLabel "correlation coefficient" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#cortana_quality
+:cortana_quality rdf:type owl:NamedIndividual ,
+                          skos:Concept ;
+                 skos:prefLabel "cortana quality" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#cost
+:cost rdf:type owl:NamedIndividual ,
+               skos:Concept ;
+      skos:narrower :average_cost ,
+                    :total_cost ;
+      skos:prefLabel "cost" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#coverage
+:coverage rdf:type owl:NamedIndividual ,
+                   skos:Concept ;
+          skos:prefLabel "coverage" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#crossvalidation
+:crossvalidation rdf:type owl:NamedIndividual ,
+                          skos:Concept ;
+                 skos:prefLabel "cross-validation" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#csf_subject_eval_knn1n_auc
+:csf_subject_eval_knn1n_auc rdf:type owl:NamedIndividual ,
+                                     skos:Concept ;
+                            skos:broader :AreaUnderCurveMeasurement ,
+                                         :CFS_Subject_Eval_KNN1N ;
+                            skos:prefLabel "CFS Subject Eval KNN1N area under curve" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#csf_subject_eval_knn1n_err_rate
+:csf_subject_eval_knn1n_err_rate rdf:type owl:NamedIndividual ,
+                                          skos:Concept ;
+                                 skos:broader :CFS_Subject_Eval_KNN1N ,
+                                              :ErrorRateMeasurement ;
+                                 skos:prefLabel "CFS Subject Eval KNN1N error rate" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#csf_subject_eval_knn1n_kappa
+:csf_subject_eval_knn1n_kappa rdf:type owl:NamedIndividual ,
+                                       skos:Concept ;
+                              skos:broader :CFS_Subject_Eval_KNN1N ,
+                                           :KappaMeasurement ;
+                              skos:prefLabel "CFS Subject Eval KNN1N kappa" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#datatype
+:datatype rdf:type owl:NamedIndividual ,
+                   skos:Concept ;
+          skos:prefLabel "data-type" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#decision_stump_auc
+:decision_stump_auc rdf:type owl:NamedIndividual ,
+                             skos:Concept ;
+                    skos:broader :AreaUnderCurveMeasurement ,
+                                 :Decision_Stump ;
+                    skos:prefLabel "Decision Stump area under curve" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#decision_stump_err_rate
+:decision_stump_err_rate rdf:type owl:NamedIndividual ,
+                                  skos:Concept ;
+                         skos:broader :Decision_Stump ,
+                                      :ErrorRateMeasurement ;
+                         skos:prefLabel "Decision Stump error rate" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#decision_stump_kappa
+:decision_stump_kappa rdf:type owl:NamedIndividual ,
+                               skos:Concept ;
+                      skos:broader :Decision_Stump ,
+                                   :KappaMeasurement ;
+                      skos:prefLabel "Decision Stump kappa" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#dimensionality
+:dimensionality rdf:type owl:NamedIndividual ,
+                         skos:Concept ;
+                skos:broader :FeatureStatistic ;
+                skos:prefLabel "dimentionality" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#equivalent_number_of_atts
+:equivalent_number_of_atts rdf:type owl:NamedIndividual ,
+                                    skos:Concept ;
+                           skos:broader :FeatureStatistic ,
+                                        :Quantity_Measurement ;
+                           skos:prefLabel "equivalent number of atts" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#error
+:error rdf:type owl:NamedIndividual ,
+                skos:Concept ;
+       skos:narrower :mean_absolute_error ,
+                     :mean_prior_absolute_error ,
+                     :relative_absolute_error ,
+                     :root_mean_prior_squared_error ,
+                     :root_mean_squared_error ,
+                     :root_relative_squared_error ,
+                     :webb_error ;
+       skos:prefLabel "error" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#f_measure
+:f_measure rdf:type owl:NamedIndividual ,
+                    skos:Concept ;
+           skos:narrower :mean_unweighted_f_measure ,
+                         :mean_weighted_f_measure ;
+           skos:prefLabel "f measure" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#holdout
+:holdout rdf:type owl:NamedIndividual ,
+                  skos:Concept ;
+         skos:prefLabel "holdout" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#image_classification
+:image_classification rdf:type owl:NamedIndividual ,
+                               skos:Concept ;
+                      skos:broader :SupervisedClassification ;
+                      skos:prefLabel "image classification" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#information_gain
+:information_gain rdf:type owl:NamedIndividual ,
+                           skos:Concept ;
+                  skos:prefLabel "information gain" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#j48_00001._area_under_curve
+:j48_00001._area_under_curve rdf:type owl:NamedIndividual ,
+                                      skos:Concept ;
+                             skos:broader :J48AreaUnderCurve ;
+                             skos:prefLabel "j48 00001. area under curve" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#j48_00001_error_rate
+:j48_00001_error_rate rdf:type owl:NamedIndividual ,
+                               skos:Concept ;
+                      skos:broader :J48ErrorRate ;
+                      skos:prefLabel "j48 00001 error rate" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#j48_00001_kappa
+:j48_00001_kappa rdf:type owl:NamedIndividual ,
+                          skos:Concept ;
+                 skos:broader :J48Kappa ;
+                 skos:prefLabel "j48 00001 kappa" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#j48_0001._area_under_curve
+:j48_0001._area_under_curve rdf:type owl:NamedIndividual ,
+                                     skos:Concept ;
+                            skos:broader :J48AreaUnderCurve ;
+                            skos:prefLabel "j48 0001. area under curve" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#j48_0001_error_rate
+:j48_0001_error_rate rdf:type owl:NamedIndividual ,
+                              skos:Concept ;
+                     skos:broader :J48ErrorRate ;
+                     skos:prefLabel "j48 0001 error rate" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#j48_0001_kappa
+:j48_0001_kappa rdf:type owl:NamedIndividual ,
+                         skos:Concept ;
+                skos:broader :J48Kappa ;
+                skos:prefLabel "j48 0001 kappa" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#j48_001._area_under_curve
+:j48_001._area_under_curve rdf:type owl:NamedIndividual ,
+                                    skos:Concept ;
+                           skos:broader :J48AreaUnderCurve ;
+                           skos:prefLabel "j48 001. area under curve" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#j48_001_error_rate
+:j48_001_error_rate rdf:type owl:NamedIndividual ,
+                             skos:Concept ;
+                    skos:broader :J48ErrorRate ;
+                    skos:prefLabel "j48 001 error rate" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#j48_001_kappa
+:j48_001_kappa rdf:type owl:NamedIndividual ,
+                        skos:Concept ;
+               skos:broader :J48Kappa ;
+               skos:prefLabel "j48 001 kappa" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#jaccard
+:jaccard rdf:type owl:NamedIndividual ,
+                  skos:Concept ;
+         skos:prefLabel "jaccard" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#joint_entropy
+:joint_entropy rdf:type owl:NamedIndividual ,
+                        skos:Concept ;
+               skos:broader :class_distribution_entropy ;
+               skos:prefLabel "joint entropy" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#kappa
+:kappa rdf:type owl:NamedIndividual ,
+                skos:Concept ;
+       skos:prefLabel "kappa" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#knn1n_area_under_curve
+:knn1n_area_under_curve rdf:type owl:NamedIndividual ,
+                                 skos:Concept ;
+                        skos:broader :AreaUnderCurveMeasurement ,
+                                     :KNN1N ;
+                        skos:prefLabel "knn1n area under curve" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#knn1n_error_rate
+:knn1n_error_rate rdf:type owl:NamedIndividual ,
+                           skos:Concept ;
+                  skos:broader :ErrorRateMeasurement ,
+                               :KNN1N ;
+                  skos:prefLabel "knn1n error rate" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#knn1n_kappa
+:knn1n_kappa rdf:type owl:NamedIndividual ,
+                      skos:Concept ;
+             skos:broader :KNN1N ,
+                          :KappaMeasurement ;
+             skos:prefLabel "knn1n kappa" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#kohavi_wolpert_decomposition_bias_squared
+:kohavi_wolpert_decomposition_bias_squared rdf:type owl:NamedIndividual ,
+                                                    skos:Concept ;
+                                           skos:broader :Kohavi_Wolpert_Decomposition ;
+                                           skos:prefLabel "kohavi wolpert decomposition bias squared" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#kohavi_wolpert_decomposition_error
+:kohavi_wolpert_decomposition_error rdf:type owl:NamedIndividual ,
+                                             skos:Concept ;
+                                    skos:broader :Kohavi_Wolpert_Decomposition ;
+                                    skos:prefLabel "kohavi wolpert decomposition error" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#kohavi_wolpert_decomposition_sigma_squared
+:kohavi_wolpert_decomposition_sigma_squared rdf:type owl:NamedIndividual ,
+                                                     skos:Concept ;
+                                            skos:broader :Kohavi_Wolpert_Decomposition ;
+                                            skos:prefLabel "kohavi wolpert decomposition sigma squared" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#kohavi_wolpert_decomposition_variance
+:kohavi_wolpert_decomposition_variance rdf:type owl:NamedIndividual ,
+                                                skos:Concept ;
+                                       skos:broader :Kohavi_Wolpert_Decomposition ;
+                                       skos:prefLabel "kohavi wolpert decomposition variance" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#kononenko_branko_information_score
+:kononenko_branko_information_score rdf:type owl:NamedIndividual ,
+                                             skos:Concept ;
+                                    skos:broader :Kononenko_Branko_Score ;
+                                    skos:prefLabel "kononenko branko information score" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#kononenko_branko_relative_information_score
+:kononenko_branko_relative_information_score rdf:type owl:NamedIndividual ,
+                                                      skos:Concept ;
+                                             skos:broader :Kononenko_Branko_Score ;
+                                             skos:prefLabel "kononenko branko relative information score" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#leave_one_out
+:leave_one_out rdf:type owl:NamedIndividual ,
+                        skos:Concept ;
+               skos:prefLabel "leave one out" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#majority_class_percentage
+:majority_class_percentage rdf:type owl:NamedIndividual ,
+                                    skos:Concept ;
+                           skos:broader :FeatureStatistic ;
+                           skos:prefLabel "majority class percentage" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#majority_class_size
+:majority_class_size rdf:type owl:NamedIndividual ,
+                              skos:Concept ;
+                     skos:broader :FeatureStatistic ,
+                                  :Quantity_Measurement ;
+                     skos:prefLabel "majority class size" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#matthews_correlation_coefficient
+:matthews_correlation_coefficient rdf:type owl:NamedIndividual ,
+                                           skos:Concept ;
+                                  skos:broader :correlation_coefficient ;
+                                  skos:prefLabel "matthews correlation coefficient" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#max_kurtosis_of_numeric_atts
+:max_kurtosis_of_numeric_atts rdf:type owl:NamedIndividual ,
+                                       skos:Concept ;
+                              skos:broader :Maximum_Measurement ;
+                              skos:prefLabel "max kurtosis of numeric atts" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#max_means_of_numeric_atts
+:max_means_of_numeric_atts rdf:type owl:NamedIndividual ,
+                                    skos:Concept ;
+                           skos:broader :Maximum_Measurement ;
+                           skos:prefLabel "max means of numeric atts" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#max_mutual_information
+:max_mutual_information rdf:type owl:NamedIndividual ,
+                                 skos:Concept ;
+                        skos:broader :Maximum_Measurement ;
+                        skos:prefLabel "max mutual information" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#max_nominal_att_distinct_values
+:max_nominal_att_distinct_values rdf:type owl:NamedIndividual ,
+                                          skos:Concept ;
+                                 skos:broader :Maximum_Measurement ;
+                                 skos:prefLabel "max nominal att distinct values" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#max_skewness_of_numeric_atts
+:max_skewness_of_numeric_atts rdf:type owl:NamedIndividual ,
+                                       skos:Concept ;
+                              skos:broader :Maximum_Measurement ;
+                              skos:prefLabel "max skewness of numeric atts" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#max_standard_dev_of_numeric_atts
+:max_standard_dev_of_numeric_atts rdf:type owl:NamedIndividual ,
+                                           skos:Concept ;
+                                  skos:broader :Maximum_Measurement ;
+                                  skos:prefLabel "max standard dev of numeric atts" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#mean_absolute_error
+:mean_absolute_error rdf:type owl:NamedIndividual ,
+                              skos:Concept ;
+                     skos:broader :error ;
+                     skos:prefLabel "mean absolute error" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#mean_attribute_entropy
+:mean_attribute_entropy rdf:type owl:NamedIndividual ,
+                                 skos:Concept ;
+                        skos:broader :Entropy ,
+                                     :Mean_Measurement ;
+                        skos:prefLabel "mean attribute entropy" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#mean_class_complexity
+:mean_class_complexity rdf:type owl:NamedIndividual ,
+                                skos:Concept ;
+                       skos:broader :Complexity ;
+                       skos:prefLabel "mean class complexity" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#mean_class_complexity_gain
+:mean_class_complexity_gain rdf:type owl:NamedIndividual ,
+                                     skos:Concept ;
+                            skos:broader :Complexity ;
+                            skos:prefLabel "mean class complexity gain" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#mean_kononenko_branko_information_score
+:mean_kononenko_branko_information_score rdf:type owl:NamedIndividual ,
+                                                  skos:Concept ;
+                                         skos:broader :Kononenko_Branko_Score ;
+                                         skos:prefLabel "mean kononenko branko information score" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#mean_kurtosis_of_numeric_atts
+:mean_kurtosis_of_numeric_atts rdf:type owl:NamedIndividual ,
+                                        skos:Concept ;
+                               skos:broader :Mean_Measurement ;
+                               skos:prefLabel "mean kurtosis of numeric atts" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#mean_means_of_numeric_atts
+:mean_means_of_numeric_atts rdf:type owl:NamedIndividual ,
+                                     skos:Concept ;
+                            skos:broader :Mean_Measurement ;
+                            skos:prefLabel "mean means of numeric atts" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#mean_mutual_information
+:mean_mutual_information rdf:type owl:NamedIndividual ,
+                                  skos:Concept ;
+                         skos:broader :Mean_Measurement ;
+                         skos:prefLabel "mean mutual information" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#mean_noise_to_signal_ratio
+:mean_noise_to_signal_ratio rdf:type owl:NamedIndividual ,
+                                     skos:Concept ;
+                            skos:broader :Mean_Measurement ;
+                            skos:prefLabel "mean noise to signal ratio" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#mean_nominal_att_distinct_values
+:mean_nominal_att_distinct_values rdf:type owl:NamedIndividual ,
+                                           skos:Concept ;
+                                  skos:broader :Mean_Measurement ;
+                                  skos:prefLabel "mean nominal att distinct values" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#mean_prior_absolute_error
+:mean_prior_absolute_error rdf:type owl:NamedIndividual ,
+                                    skos:Concept ;
+                           skos:broader :error ;
+                           skos:prefLabel "mean prior absolute error" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#mean_prior_class_complexity
+:mean_prior_class_complexity rdf:type owl:NamedIndividual ,
+                                      skos:Concept ;
+                             skos:broader :Complexity ;
+                             skos:prefLabel "mean prior class complexity" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#mean_skewness_of_numeric_atts
+:mean_skewness_of_numeric_atts rdf:type owl:NamedIndividual ,
+                                        skos:Concept ;
+                               skos:broader :Mean_Measurement ;
+                               skos:prefLabel "mean skewness of numeric atts" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#mean_standard_dev_of_numeric_atts
+:mean_standard_dev_of_numeric_atts rdf:type owl:NamedIndividual ,
+                                            skos:Concept ;
+                                   skos:broader :Mean_Measurement ;
+                                   skos:prefLabel "mean standard dev of numeric atts" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#mean_unweighted_f_measure
+:mean_unweighted_f_measure rdf:type owl:NamedIndividual ,
+                                    skos:Concept ;
+                           skos:broader :f_measure ;
+                           skos:prefLabel "mean unweighted f measure" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#mean_unweighted_precision
+:mean_unweighted_precision rdf:type owl:NamedIndividual ,
+                                    skos:Concept ;
+                           skos:broader :precision ;
+                           skos:prefLabel "mean unweighted precision" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#mean_unweighted_recall
+:mean_unweighted_recall rdf:type owl:NamedIndividual ,
+                                 skos:Concept ;
+                        skos:broader :recall ;
+                        skos:prefLabel "mean unweighted recall" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#mean_weighted_area_under_ROC_curve
+:mean_weighted_area_under_ROC_curve rdf:type owl:NamedIndividual ,
+                                             skos:Concept ;
+                                    skos:broader :Area_Under_Curve_Evaluation_Metric ;
+                                    skos:prefLabel "mean weighted area under ROC curve" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#mean_weighted_f_measure
+:mean_weighted_f_measure rdf:type owl:NamedIndividual ,
+                                  skos:Concept ;
+                         skos:broader :f_measure ;
+                         skos:prefLabel "mean weighted f measure" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#mean_weighted_precision
+:mean_weighted_precision rdf:type owl:NamedIndividual ,
+                                  skos:Concept ;
+                         skos:broader :precision ;
+                         skos:prefLabel "mean weighted precision" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#mean_weighted_recall
+:mean_weighted_recall rdf:type owl:NamedIndividual ,
+                               skos:Concept ;
+                      skos:broader :recall ;
+                      skos:prefLabel "mean weighted recall" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#min_kurtosis_of_numeric_atts
+:min_kurtosis_of_numeric_atts rdf:type owl:NamedIndividual ,
+                                       skos:Concept ;
+                              skos:broader :Minimum_Measurement ;
+                              skos:prefLabel "min kurtosis of numeric atts" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#min_means_of_numeric_atts
+:min_means_of_numeric_atts rdf:type owl:NamedIndividual ,
+                                    skos:Concept ;
+                           skos:broader :Minimum_Measurement ;
+                           skos:prefLabel "min means of numeric atts" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#min_mutual_information
+:min_mutual_information rdf:type owl:NamedIndividual ,
+                                 skos:Concept ;
+                        skos:broader :Minimum_Measurement ;
+                        skos:prefLabel "min mutual information" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#min_nominal_att_distinct_values
+:min_nominal_att_distinct_values rdf:type owl:NamedIndividual ,
+                                          skos:Concept ;
+                                 skos:broader :Minimum_Measurement ;
+                                 skos:prefLabel "min nominal att distinct values" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#min_skewness_of_numeric_atts
+:min_skewness_of_numeric_atts rdf:type owl:NamedIndividual ,
+                                       skos:Concept ;
+                              skos:broader :Minimum_Measurement ;
+                              skos:prefLabel "min skewness of numeric atts" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#min_standard_dev_of_numeric_atts
+:min_standard_dev_of_numeric_atts rdf:type owl:NamedIndividual ,
+                                           skos:Concept ;
+                                  skos:broader :Minimum_Measurement ;
+                                  skos:prefLabel "min standard dev of numeric atts" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#minority_class_percentage
+:minority_class_percentage rdf:type owl:NamedIndividual ,
+                                    skos:Concept ;
+                           skos:broader :FeatureStatistic ;
+                           skos:prefLabel "minority class percentage" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#minortity_class_size
+:minortity_class_size rdf:type owl:NamedIndividual ,
+                               skos:Concept ;
+                      skos:broader :FeatureStatistic ,
+                                   :Quantity_Measurement ;
+                      skos:prefLabel "minortity class size" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#missing_values_percentage
+:missing_values_percentage rdf:type owl:NamedIndividual ,
+                                    skos:Concept ;
+                           skos:broader :FeatureStatistic ;
+                           skos:prefLabel "missing values percentage" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#multiclass_classification
+:multiclass_classification rdf:type owl:NamedIndividual ,
+                                    skos:Concept ;
+                           skos:broader :Supervised_Classification ;
+                           skos:prefLabel "multiclass classification" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#number_of_binary_features
+:number_of_binary_features rdf:type owl:NamedIndividual ,
+                                    skos:Concept ;
+                           skos:broader :FeatureStatistic ,
+                                        :Quantity_Measurement ;
+                           skos:prefLabel "number of binary features" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#number_of_classes
+:number_of_classes rdf:type owl:NamedIndividual ,
+                            skos:Concept ;
+                   skos:broader :FeatureStatistic ,
+                                :Quantity_Measurement ;
+                   skos:prefLabel "number of classes" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#number_of_distinct_values
+:number_of_distinct_values rdf:type owl:NamedIndividual ,
+                                    skos:Concept ;
+                           skos:prefLabel "number of distinct values" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#number_of_features
+:number_of_features rdf:type owl:NamedIndividual ,
+                             skos:Concept ;
+                    skos:broader :FeatureStatistic ,
+                                 :Quantity_Measurement ;
+                    skos:prefLabel "number of features" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#number_of_instances
+:number_of_instances rdf:type owl:NamedIndividual ,
+                              skos:Concept ;
+                     skos:broader :FeatureStatistic ,
+                                  :Quantity_Measurement ;
+                     skos:prefLabel "number of instances" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#number_of_instances_with_missing_values
+:number_of_instances_with_missing_values rdf:type owl:NamedIndividual ,
+                                                  skos:Concept ;
+                                         skos:broader :FeatureStatistic ,
+                                                      :Quantity_Measurement ;
+                                         skos:prefLabel "number of instances with missing values" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#number_of_missing_values
+:number_of_missing_values rdf:type owl:NamedIndividual ,
+                                   skos:Concept ;
+                          skos:broader :FeatureStatistic ,
+                                       :Quantity_Measurement ;
+                          skos:prefLabel "number of missing values" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#number_of_numeric_features
+:number_of_numeric_features rdf:type owl:NamedIndividual ,
+                                     skos:Concept ;
+                            skos:broader :FeatureStatistic ,
+                                         :Quantity_Measurement ;
+                            skos:prefLabel "number of numeric features" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#number_of_symbolic_features
+:number_of_symbolic_features rdf:type owl:NamedIndividual ,
+                                      skos:Concept ;
+                             skos:broader :FeatureStatistic ,
+                                          :Quantity_Measurement ;
+                             skos:prefLabel "number of symbolic features" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#numeric_features_percentage
+:numeric_features_percentage rdf:type owl:NamedIndividual ,
+                                      skos:Concept ;
+                             skos:broader :FeatureStatistic ;
+                             skos:prefLabel "numeric features percentage" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#os_information
+:os_information rdf:type owl:NamedIndividual ,
+                         skos:Concept ;
+                skos:prefLabel "os information" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#pearson_correlation_coefficient
+:pearson_correlation_coefficient rdf:type owl:NamedIndividual ,
+                                          skos:Concept ;
+                                 skos:broader :correlation_coefficient ;
+                                 skos:prefLabel "pearson correlation coefficient" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#positives
+:positives rdf:type owl:NamedIndividual ,
+                    skos:Concept ;
+           skos:prefLabel "positives" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#precision
+:precision rdf:type owl:NamedIndividual ,
+                    skos:Concept ;
+           skos:narrower :mean_unweighted_precision ,
+                         :mean_weighted_precision ;
+           skos:prefLabel "precision" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#prediction_confusion_matrix
+:prediction_confusion_matrix rdf:type owl:NamedIndividual ,
+                                      skos:Concept ;
+                             skos:prefLabel "prediction confusion matrix" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#prior_class_complexity
+:prior_class_complexity rdf:type owl:NamedIndividual ,
+                                 skos:Concept ;
+                        skos:broader :Complexity ;
+                        skos:prefLabel "prior class complexity" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#prior_entropy
+:prior_entropy rdf:type owl:NamedIndividual ,
+                        skos:Concept ;
+               skos:broader :class_distribution_entropy ;
+               skos:prefLabel "prior entropy" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#probability
+:probability rdf:type owl:NamedIndividual ,
+                      skos:Concept ;
+             skos:prefLabel "probability" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#quality
+:quality rdf:type owl:NamedIndividual ,
+                  skos:Concept ;
+         skos:prefLabel "quality" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#ram_hours
+:ram_hours rdf:type owl:NamedIndividual ,
+                    skos:Concept ;
+           skos:broader :Execution ;
+           skos:prefLabel "ram hours" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#recall
+:recall rdf:type owl:NamedIndividual ,
+                 skos:Concept ;
+        skos:narrower :mean_unweighted_recall ,
+                      :mean_weighted_recall ;
+        skos:prefLabel "recall" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#relative_absolute_error
+:relative_absolute_error rdf:type owl:NamedIndividual ,
+                                  skos:Concept ;
+                         skos:broader :error ;
+                         skos:prefLabel "relative absolute error" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#root_mean_prior_squared_error
+:root_mean_prior_squared_error rdf:type owl:NamedIndividual ,
+                                        skos:Concept ;
+                               skos:broader :error ;
+                               skos:prefLabel "root mean prior squared error" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#root_mean_squared_error
+:root_mean_squared_error rdf:type owl:NamedIndividual ,
+                                  skos:Concept ;
+                         skos:broader :error ;
+                         skos:prefLabel "root mean squared error" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#root_relative_squared_error
+:root_relative_squared_error rdf:type owl:NamedIndividual ,
+                                      skos:Concept ;
+                             skos:broader :error ;
+                             skos:prefLabel "root relative squared error" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#run_cpu_time
+:run_cpu_time rdf:type owl:NamedIndividual ,
+                       skos:Concept ;
+              skos:broader :Execution ;
+              skos:prefLabel "run cpu time" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#run_memory
+:run_memory rdf:type owl:NamedIndividual ,
+                     skos:Concept ;
+            skos:broader :Execution ;
+            skos:prefLabel "run memory" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#run_virtual_memory
+:run_virtual_memory rdf:type owl:NamedIndividual ,
+                             skos:Concept ;
+                    skos:broader :Execution ;
+                    skos:prefLabel "run virtual memory" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#schimark_benchmark
+:schimark_benchmark rdf:type owl:NamedIndividual ,
+                             skos:Concept ;
+                    skos:prefLabel "schimark benchmark" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#single_point_area_under_ROC_curve
+:single_point_area_under_ROC_curve rdf:type owl:NamedIndividual ,
+                                            skos:Concept ;
+                                   skos:broader :Area_Under_Curve_Evaluation_Metric ;
+                                   skos:prefLabel "single point area under ROC curve" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#symbolic_features_percentage
+:symbolic_features_percentage rdf:type owl:NamedIndividual ,
+                                       skos:Concept ;
+                              skos:broader :FeatureStatistic ;
+                              skos:prefLabel "symbolic features percentage" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#test_on_training_data
+:test_on_training_data rdf:type owl:NamedIndividual ,
+                                skos:Concept ;
+                       skos:prefLabel "test on training data" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#test_then_train
+:test_then_train rdf:type owl:NamedIndividual ,
+                          skos:Concept ;
+                 skos:prefLabel "test then train" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#total_cost
+:total_cost rdf:type owl:NamedIndividual ,
+                     skos:Concept ;
+            skos:broader :cost ;
+            skos:prefLabel "total cost" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#unclassified_instance_count
+:unclassified_instance_count rdf:type owl:NamedIndividual ,
+                                      skos:Concept ;
+                             skos:prefLabel "unclassified instance count" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#usercpu_time_millis
+:usercpu_time_millis rdf:type owl:NamedIndividual ,
+                              skos:Concept ;
+                     skos:broader :Execution ;
+                     skos:prefLabel "usercpu time millis" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#usercpu_time_millis_training
+:usercpu_time_millis_training rdf:type owl:NamedIndividual ,
+                                       skos:Concept ;
+                              skos:broader :Execution ;
+                              skos:prefLabel "usercpu time millis training" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#variance
+:variance rdf:type owl:NamedIndividual ,
+                   skos:Concept ;
+          skos:narrower :webb_variance ;
+          skos:prefLabel "variance" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#wall_clock_time_millis_testing
+:wall_clock_time_millis_testing rdf:type owl:NamedIndividual ,
+                                         skos:Concept ;
+                                skos:broader :Execution ;
+                                skos:prefLabel "wall clock time millis testing" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#wall_clock_time_millis_training
+:wall_clock_time_millis_training rdf:type owl:NamedIndividual ,
+                                          skos:Concept ;
+                                 skos:broader :Execution ;
+                                 skos:prefLabel "wall clock time millis training" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#webb_bias
+:webb_bias rdf:type owl:NamedIndividual ,
+                    skos:Concept ;
+           skos:broader :bias ;
+           skos:prefLabel "webb bias" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#webb_error
+:webb_error rdf:type owl:NamedIndividual ,
+                     skos:Concept ;
+            skos:broader :error ;
+            skos:prefLabel "webb error" .
+
+
+###  http://www.semanticweb.org/ioannisdasoulas/ontologies/2022/8/ml-vocab#webb_variance
+:webb_variance rdf:type owl:NamedIndividual ,
+                        skos:Concept ;
+               skos:broader :variance ;
+               skos:prefLabel "webb variance" .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
